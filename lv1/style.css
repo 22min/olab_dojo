@@ -1,0 +1,22 @@
+body{
+    width: 100%;
+    background-color: #F59056;
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    color: #f5faff;
+    text-align: center;
+
+}
+
+p{
+    background-color: #fdf7e2;
+    text-align: center;
+    margin:0% 25% 0% 25%;
+    padding: 20px;
+    border: 5px solid #FFEDB3;
+    margin:20;
+
+}
