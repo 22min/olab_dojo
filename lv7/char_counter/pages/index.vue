@@ -6,14 +6,14 @@
       文字数: 
       <span>{{ charNum }}</span><br>
       文字数(空白文字、改行文字を除く): 
-      <span>{{ charNumWithoutWhitespaceAndNewline }}</span>
+      <span>{{ charNumWithoutWhitespace }}</span>
     </p>
 
   </div>
 </template>
 
 <script>
-const re = /\s+/g;
+const whitespace_re = /\s+/g;
 export default {
   name: "CharCounter",
   data(){
@@ -25,11 +25,11 @@ export default {
     }
   },
   computed:{
-    charNum: function(){
+    charNum(){
       return this.text.length;
     },
-    charNumWithoutWhitespaceAndNewline(){
-      return this.text.replace(re,"").length;
+    charNumWithoutWhitespace(){
+      return this.text.replace(whitespace_re, "").length;
     }
   }
 }
