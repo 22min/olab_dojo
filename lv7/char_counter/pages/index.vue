@@ -2,14 +2,18 @@
   <div>
     <h1>文字数カウンター</h1>
     <textarea style="width:300px; height:150px;" v-model="text" ></textarea>
-    <p>文字数: <span>{{ charNum }}</span><br>
-    文字数(空白文字、改行文字を除く): <span>{{charNumWithoutWhitespaceAndNewline}}</span>
+    <p>
+      文字数: 
+      <span>{{ charNum }}</span><br>
+      文字数(空白文字、改行文字を除く): 
+      <span>{{ charNumWithoutWhitespaceAndNewline }}</span>
     </p>
 
   </div>
 </template>
 
 <script>
+const re = /\s+/g;
 export default {
   name: "CharCounter",
   data(){
@@ -25,7 +29,7 @@ export default {
       return this.text.length;
     },
     charNumWithoutWhitespaceAndNewline(){
-      return this.text.replace(/[(\r?\n)\s]/g,"").length;
+      return this.text.replace(re,"").length;
     }
   }
 }
