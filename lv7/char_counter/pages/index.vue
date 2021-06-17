@@ -12,12 +12,14 @@
 <script>
 export default {
   name: "CharCounter",
-  data: () => ({
-    text: `いろはにほへと　ちりぬるを
+  data(){
+    return {
+      text: `いろはにほへと　ちりぬるを
 わかよたれそ　　つねならむ
 うゐのおくやま　けふこえて
 あさきゆめみし　ゑひもせすん`, 
-  }),
+    }
+  },
   computed:{
     charNum: function(){
       return this.text.length;
